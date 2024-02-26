@@ -1,1 +1,1 @@
-Atividades DE Programação Web (FATEC, 4º semestre).
+Atividades de Programação Web (FATEC, 4º semestre).
