@@ -1,0 +1,85 @@
+.square {
+    width: 500px;
+    height: 500px;
+    justify-content: center;
+    font-size: large;
+    text-align: center;
+    display: flex;
+}
+
+@media only screen and (min-width: 0) and (max-width: 420px) {
+    .square {
+        background-color: gray;
+        color: black;
+    }
+
+    h2:before {
+        content: "Gray";
+    }
+}
+
+@media only screen and (min-width: 420px) and (max-width: 768px) {
+    .square {
+        background-color: orange;
+        color: black;
+    }
+
+    h2:before {
+        content: "Orange";
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .square {
+        background-color: pink;
+        color: black;
+    }
+
+    h2:before {
+        content: "Pink";
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1080px) {
+    .square {
+        background-color: red;
+        color: black;
+    }
+    
+    h2:before {
+        content: "Red";
+    }
+}
+
+@media only screen and (min-width: 1080px) and (max-width: 1366px) {
+    .square {
+        background-color: blue;
+        color: black;
+    }
+
+    h2:before {
+        content: "Blue";
+    }
+}
+
+@media only screen and (min-width: 1366px) and (max-width: 1920px) {
+    .square {
+        background-color: yellow;
+        color: black;
+    }
+
+    h2:before {
+        content: "Yellow";
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .square {
+        background-color: green;
+        color: black;
+    }
+
+    h2:before {
+        content: "Green";
+    }
+}
