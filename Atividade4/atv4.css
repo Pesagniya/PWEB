@@ -1,0 +1,119 @@
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 40px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5;
+  background-color: #f8f3eb;
+  padding-bottom: 5rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+.wrapper {
+  max-width: 1700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.publicity {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.layout {
+  display: flex;
+}
+
+.column {
+  padding: 0 9rem;
+  border-right: 1px solid #CCC;
+  margin-top: 10rem;
+  flex-basis: calc(30% - 1rem);
+}
+
+
+.column:last-child {
+  border-right: none;
+}
+
+.article:not(:first-child) {
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid #ccc;
+}
+
+.article-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.article-title {
+  font-weight: 900;
+  line-height: 1.25;
+  color: #000;
+}
+
+.article-legend {
+  font-size: 1.125em;
+  line-height: 1.4;
+  color: gray;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .column {
+    padding: 0;
+    border-right: none;
+    margin: 0;
+    flex-basis: auto;
+  }
+
+  .article {
+    padding-top: 1rem;
+    margin: 3rem;
+    border-top: 1px solid #ccc;
+  }
+}
