@@ -1,40 +1,41 @@
-	const rockBtn = document.querySelector('.rock');
-	const paperBtn = document.querySelector('.paper');
-	const scissorBtn = document.querySelector('.scissor');
-	const playerOptions = [rockBtn, paperBtn, scissorBtn];
-	const computerOptions = ['rock', 'paper', 'scissors'];
+const rockBtn = document.querySelector('.rock');
+const paperBtn = document.querySelector('.paper');
+const scissorBtn = document.querySelector('.scissor');
+const playerOptions = [rockBtn, paperBtn, scissorBtn];
+const computerOptions = ['Pedra', 'Papel', 'Tesoura'];
 
-	playerOptions.forEach((option) => {
-			option.addEventListener('click', function() {
+const winner = (player, computer) => {
 
-				const choiceNumber = Math.floor(Math.random() * 3);
-				const computerChoice = computerOptions[choiceNumber];
+	const result = document.querySelector('.result');
 
-				winner(this.innerText, computerChoice);
-			});
-		});
+	if (player == computer) 
+		result.textContent = 'Empate';
+	else if (player == 'Pedra') {
+		if (computer == 'Papel') 
+			result.textContent = 'Computer Win';
+		else 
+			result.textContent = 'Player Win';	
+	}
+	else if (player == 'Tesoura') {
+		if (computer == 'Pedra') 
+			result.textContent = 'AI Win';
+		else 
+			result.textContent = 'Player Win';
+	}
+	else if (player == 'Papel') {
+		if (computer == 'Tesoura') 
+			result.textContent = 'AI Win';
+		else 
+			result.textContent = 'Player Win';			
+	}
+};
 
-	const winner = (player, computer) => {
-		const result = document.querySelector('.result');
+playerOptions.forEach((option) => {
+	option.addEventListener('click', function() {
 
-		if (player == computer) 
-			result.textContent = 'Empate';
-		else if (player == 'rock') {
-			if (computer == 'paper') 
-				result.textContent = 'Computer Win';
-			else 
-				result.textContent = 'Player Win';	
-		}
-		else if (player == 'scissors') {
-			if (computer == 'rock') 
-				result.textContent = 'AI Win';
-			else 
-				result.textContent = 'Player Win';
-		}
-		else if (player == 'paper') {
-			if (computer == 'scissors') 
-				result.textContent = 'AI Win';
-			else 
-				result.textContent = 'Player Win';			
-		}
-	};
+		const choiceNumber = Math.floor(Math.random() * 3);
+		const computerChoice = computerOptions[choiceNumber];
+
+		winner(this.innerText, computerChoice);
+	});
+});
