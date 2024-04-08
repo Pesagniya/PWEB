@@ -1,0 +1,49 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário de filme</title>
+</head>
+<body>
+    <form id="questionario">
+        <h2>Questionário</h2>
+
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade"><br><br>
+
+        <label for="sexo">Sexo</label>
+        <input type="radio" id="masculino" name="masculino" checked>
+        <label for="masculino">Masculino</label>
+        <input type="radio" id="feminino" name="feminino">
+        <label for="feminino">Feminino</label><br><br>
+        <!-- <select name="sexo" id="sexo">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+        </select><br><br> -->
+        <!-- radio test -->
+
+        <label for="opiniao">Opinião:</label>
+        <select name="opiniao" id="opiniao">
+            <option value="4">Ótimo</option>
+            <option value="3">Bom</option>
+            <option value="2">Regular</option>
+            <option value="1">Péssimo</option>
+        </select><br><br>
+
+        <input type="button" value="Enviar" onclick="enviar()">
+    </form><br><br>
+
+    <h2>Estatísticas</h2>
+    <p>Média da idade: <span id="mediaIdade"></span></p>
+    <p>Idade da pessoa mais velha: <span id="maisVelha"></span></p>
+    <p>Idade da pessoa mais nova: <span id="maisNova"></span></p>
+    <p>Quantidade de pessoas que responderam péssimo: <span id="qtdPessimo"></span></p>
+    <p>Porcentagem que responderam ótimo ou bom: <span id="porcentagemHigh"></span></p>
+    <p>Número de mulheres que responderam: <span id="numMulher"></span></p>
+    <p>Número de homens que responderam: <span id="numHomem"></span></p>
+
+    <input type="button" value="Calcular Estatísticas" onclick="calcularEstatistica()">
+
+    <script src="atv8.js"></script>
+</body>
+</html>
