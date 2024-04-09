@@ -4,7 +4,7 @@ let opinioes = [];
 
 function enviar() {
     const idade = parseInt(document.getElementById("idade").value);
-    const sexo = document.getElementById("sexo").value;
+    const sexo = document.querySelector('input[name="sexo"]:checked').id;
     const opiniao = document.getElementById("opiniao").value;
 
     idades.push(idade);
