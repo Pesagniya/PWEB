@@ -1,21 +1,20 @@
-// remove duplication
-
 function calcularMaior() {
     const numbers = [];
-    numbers.push(document.getElementById('num1').value);
-    numbers.push(document.getElementById('num2').value);
-    numbers.push(document.getElementById('num3').value);    
+    for (let i = 1; i <= 3; i++) {
+        numbers.push(parseFloat(document.getElementById(`num${i}`).value));
+    }
     
     alert(Math.max.apply(null, numbers));
 }
 
 function ordemCresc() {
     const numbers = [];
-    numbers.push(document.getElementById('num1').value);
-    numbers.push(document.getElementById('num2').value);
-    numbers.push(document.getElementById('num3').value);  
+    for (let i = 1; i <= 3; i++) {
+        numbers.push(parseFloat(document.getElementById(`num${i}`).value));
+        //does parseFloat make a difference? It should be comparing Strings without it, but still outputs correctly
+    }
 
-    alert(numbers.sort(function(a, b){return a-b}));
+    alert(numbers.sort(function(a, b){return a-b}).join('\t'));
 }
 
 function verificarPalindromo() {
@@ -28,9 +27,9 @@ function verificarPalindromo() {
 }
 
 function verificarTriangulo() {
-    const a = document.getElementById('num1').value;
-    const b = document.getElementById('num2').value;
-    const c = document.getElementById('num3').value;  
+    const a = parseFloat(document.getElementById('num1').value);
+    const b = parseFloat(document.getElementById('num2').value);
+    const c = parseFloat(document.getElementById('num3').value);  
 
     if (a + b > c && a + c > b && b + c > a) {
         if (a === b && b === c) 
