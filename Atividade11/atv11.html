@@ -1,0 +1,28 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 11</title>
+</head>
+<body>
+    <script>
+        var funcionario1 = new Object();
+        funcionario1.matricula = "003048";
+        funcionario1.nome = "Alex";
+        funcionario1.funcao = "Zelador"
+
+        var funcionario1 = {
+            matricula: "003048",
+            nome: "Alex",
+            funcao: "Zelador"
+        };
+
+        function Funcionario(matricula, nome, funcao) {
+            this.matricula = matricula;
+            this.nome = nome;
+            this.funcao = funcao;
+        }
+        var funcionario1 = new Funcionario("003048", "Alex", "Zelador");
+    </script>
+</body>
+</html>

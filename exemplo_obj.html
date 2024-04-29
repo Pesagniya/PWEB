@@ -1,0 +1,121 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando objetos</title>
+</head>
+<body>
+    <script>
+        var aluno1 = new Object();
+        aluno1.ra = "003048";
+        aluno1.nome = "Leonardo";
+        alert(`RA = ${aluno1.ra}, Nome = ${aluno1.nome}`);
+
+        var aluno2 = {};
+        aluno2.ra = "003042";
+        aluno2['nome'] = "Beatriz";
+
+        var aluno3 = {
+            ra: "003041",
+            nome: "Felipe"
+        };
+
+        function Aluno(ra, nome) {
+            this.ra = ra;
+            this.nome = nome;
+            this.MostraDados = function() {
+                return this.ra + " " + this.nome;
+            }
+        }
+
+        var aluno4 = new Aluno("123", "Rute");
+        alert(aluno4.MostraDados());
+
+        var aluno5 = {};
+        var nome_propriedade = "ra";
+        aluno5[nome_propriedade] = "123";
+        alert(aluno5.ra);
+
+        function Aluno2() {
+            var ra; //escondido ou private
+            var nome;
+            this.setRa = function (value) {
+                this.ra = value;
+            }
+            this.getRa = function () {
+                return this.ra;
+            }
+            this.setNome = function (value) {
+                this.nome = value;
+            }
+            this.getNome = function () {
+                return this.nome;
+            }
+        }
+
+        function AlunoADS() {
+            var numLab;
+            this.setnumLab = function (value) {
+                this.numLab = value;
+            }
+            this.getnumLab = function () {
+                return this.numLab;
+            }
+        }
+
+        AlunoADS.prototype = new Aluno2();
+        var aluno7 = new AlunoADS();
+        aluno7.setNome("Gustavo");
+        aluno7.setnumLab(5);
+        alert(aluno7.getNome() + " " + aluno7.getnumLab());
+
+        const arr = [['código', 1], ['nome', "João"]];
+        const obj = Object.fromEntries(arr);
+        alert(JSON.stringify(obj));
+        
+        class Aluno1 {
+            constructor () {
+                this.ra;
+                this.nome;
+            }
+
+            setNome (value) {
+                this.nome = value;
+            }
+
+            getNome () {
+                return this.nome;
+            }
+
+            setRa (value) {
+                this.ra = value;
+            }
+
+            getRa () {
+                return this.ra;
+            }
+        }
+
+        var objAluno = new Aluno1();
+        objAluno.setNome("Livia");
+        objAluno.setRa("345");
+
+        class AlunoADS1 extends Aluno1 {
+            constructor() {
+                this.numLab;
+            }
+            setnumLab (value) {
+                this.numLab = value;
+            }
+            getnumLab () {
+                return this.numLab;
+            }
+        }
+
+        var objAlunoADS = new AlunoADS1();
+        objAlunoADS.setNome = "Lauri";
+        objAlunoADS.setRa = "3453";
+        alert(`nome=${objAlunoADS.getNome()}, ra=${objAlunoADS.getRa()}`);
+    </script>
+</body>
+</html>
