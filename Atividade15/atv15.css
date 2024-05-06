@@ -9,3 +9,12 @@ body {
     padding: 20px;
     text-align: center;
 }
+
+.input-wrapper { 
+    display: inline-block; 
+    text-align: left; 
+}
+
+#pesquisa {
+    font-style: italic;
+}

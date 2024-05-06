@@ -18,10 +18,14 @@ function validarDados() {
         return false;
     }
 
-    if (document.getElementById("sim").checked)
-        document.getElementById("pesquisa").innerHTML = "Que bom que você voltou a visitar esta página!";
-    else if (document.getElementById("nao").checked)
-        document.getElementById("pesquisa").innerHTML = "Volte sempre a esta página!";
+    if (document.getElementById("nao").checked)
+        alert("Que bom que você voltou a visitar esta página!");
+    else if (document.getElementById("sim").checked)
+        alert("Volte sempre a esta página!");
+    else {
+        alert("Escolha uma opção no campo PESQUISA!");
+        return false;
+    }
 
     return true;
 }
