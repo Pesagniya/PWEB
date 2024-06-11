@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const deleteModal = document.getElementById("deleteModal");
   const closeBtn = document.querySelector(".close");
   const addTaskBtn = document.querySelector(".add-task");
-  const saveTaskBtn = document.getElementById("saveTask");
+  const createTaskBtn = document.getElementById("createTask");
   const confirmDeleteBtn = document.getElementById("confirmDelete");
   const cancelDeleteBtn = document.getElementById("cancelDelete");
   let taskToDelete;
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   closeBtn.addEventListener("click", closeModal);
   addTaskBtn.addEventListener("click", openModal);
-  saveTaskBtn.addEventListener("click", saveTask);
+  createTaskBtn.addEventListener("click", createTask);
   confirmDeleteBtn.addEventListener("click", confirmDelete);
   cancelDeleteBtn.addEventListener("click", closeDeleteModal);
   deleteModal.querySelector(".close").addEventListener("click", closeDeleteModal);
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function saveTask() {
+  function createTask() {
     const task = {
       title: document.getElementById("taskTitle").value,
       description: document.getElementById("taskDescription").value,
