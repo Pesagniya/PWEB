@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanban</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="kanban-board">
+    <section class="kanban-column" id="pending">
+      <h2>Pendentes</h2>
+      <div class="tasks"></div>
+      <button class="add-task">Adicionar Tarefa</button>
+    </section>
+    <section class="kanban-column" id="in-progress">
+      <h2>Em andamento</h2>
+      <div class="tasks"></div>
+    </section>
+    <section class="kanban-column" id="completed">
+      <h2>Concluídas</h2>
+      <div class="tasks"></div>
+    </section>
+  </div>
+
+  <div id="taskModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+        <h2>Especificações da Tarefa</h2>
+        <label for="taskTitle">Título:</label>
+        <input type="text" id="taskTitle"><br><br>
+        <label for="taskDescription">Descrição:</label>
+        <input type="text" id="taskDescription"><br><br>
+        <label for="taskPriority">Prioridade:</label>
+        <select id="taskPriority">
+          <option value="Baixa">Baixa</option>
+          <option value="Média">Média</option>
+          <option value="Alta">Alta</option>
+        </select><br><br>
+        <label for="taskDueDate">Data de Entrega:</label>
+        <input type="date" id="taskDueDate"><br><br>
+        <label for="taskAssignees">Responsáveis:</label>
+        <input type="text" id="taskAssignees"><br><br>
+        <button id="saveTask">Salvar Tarefa</button>
+    </div>
+  </div>
+
+  <div id="deleteModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Confirmar Exclusão</h2>
+      <p>Tem certeza de que deseja excluir esta tarefa?</p>
+      <button id="confirmDelete">Confirmar</button>
+      <button id="cancelDelete">Cancelar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

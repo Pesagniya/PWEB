@@ -1,0 +1,215 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.kanban-board {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.kanban-column {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 30%;
+  height: 600px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.kanban-column h2 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+  flex-shrink: 0;
+}
+
+.tasks {
+  flex-grow: 1;
+  min-height: 200px;
+  padding: 10px;
+  background-color: #fafafa;
+  border-radius: 5px;
+  overflow-y: auto;
+  max-height: 470px; 
+}
+
+.task-card {
+  background-color: #e2e2e2;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 5px 0;
+  padding: 10px;
+  max-width: calc(100% - 20px);
+  cursor: move;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.task-card:hover {
+  background-color: #d3d3d3;
+  border-color: #bbb;
+}
+
+.task-card h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.task-card p {
+  margin: 0 0 5px 0;
+  color: #555;
+}
+
+.task-card span {
+  display: block;
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.task-card .edit,
+.task-card .delete {
+  cursor: pointer;
+  margin-left: 5px;
+  transition: color 0.3s ease;
+}
+
+.warning {
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px;
+  border: 1px solid #888;
+  padding: 2px 5px;
+}
+
+.draft-label {
+  color: #1c51ff;
+  background-color: #b0c1f8;
+}
+
+.overdue-label {
+  color: #ff0202;
+  background-color: #f8b5b0;
+}
+
+.add-task {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: auto;
+  transition: background-color 0.3s ease;
+}
+
+.add-task:hover {
+  background-color: #218838;
+}
+
+#pending {
+  border-top: 5px solid #dc3545;
+}
+
+#in-progress {
+  border-top: 5px solid #e2df1ecb;
+}
+
+#completed {
+  border-top: 5px solid #28a745;
+}
+
+.kanban-column::-webkit-scrollbar {
+  width: 8px;
+}
+
+.kanban-column::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.kanban-column::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.kanban-column::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Modal */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 5px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+#saveTask {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+#saveTask:hover {
+  background-color: #218838;
+}
+
+#deleteModal .modal-content {
+  width: 300px;
+}
+
+#deleteModal button {
+  margin: 10px;
+}
